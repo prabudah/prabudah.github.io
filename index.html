@@ -159,10 +159,6 @@
                   <textarea class="form-control" id="pesan" rows="3" name="pesan"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary shadow">Kirim</button>
-                <button class="btn btn-primary btn-kirim shadow" type="button" disabled>
-                  <span class="spinner-border spinner-border-sm btn-load" role="status" aria-hidden="true"></span>
-                  Loading...
-                </button>
               </form>
             </div>
           </div>
@@ -183,29 +179,6 @@
       <p class="text-white fw-bold">Created <i class="bi bi-heart-fill text-danger"></i> with Prabu Panedya</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbxiEQRbOeJMQZTb5H03MHOrX9x7PGOuKsNX0-qvvjP5W-iOFmi3V4BiICKKvxq02JUAHA/exec';
-      const form = document.forms['message-web-porto'];
-      const btnKirim = documnent.querySelector('.btn-kirim');
-      const btnLoad = document.querySelector('.btn-load');
-      const myAlert = document.querySelector('.my-alert');
-
-      //ketika button kirim diklik
-      //button load muncul kirim hilang
-      btnLoad.classList.toggle(d - none);
-      btnKirim.classList.toggle(d - none);
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then((response) => {
-            //button load muncul kirim hilang
-            btnLoad.classList.toggle(d - none);
-            btnKirim.classList.toggle(d - none);
-            console.log('Success!', response);
-          })
-          .catch((error) => console.error('Error!', error.message));
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
